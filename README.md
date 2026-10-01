@@ -2,6 +2,8 @@
 
 A small insurance information website with a React frontend and a FastAPI chatbot backend. The chatbot sends questions to the backend, which calls the Groq API using the OpenAI-compatible client. If the backend cannot be reached, the frontend falls back to simple keyword-based answers.
 
+The application is live here: https://ai-powered-website-with-q-a-insurebot-1-2.onrender.com/
+
 ## Project structure
 
 ```text
