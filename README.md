@@ -99,7 +99,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
-The API health check is available at `http://localhost:8000/`. The chatbot endpoint is `POST http://localhost:8000/chat`.
+The API health check is available at `https://ai-powered-website-with-q-a-insurebott.onrender.com/`. The chatbot endpoint is `POST https://ai-powered-website-with-q-a-insurebott.onrender.com/chat`.
 
 ### 2. Configure and start the frontend
 
@@ -112,7 +112,7 @@ npm ci
 npm run dev
 ```
 
-The example frontend environment sets `VITE_API_URL=http://localhost:8000`. If you change the backend address, update `chatbot/.env.local` and restart Vite. Open the URL printed by Vite, usually `http://localhost:5173`.
+The example frontend environment sets `VITE_API_URL=https://ai-powered-website-with-q-a-insurebott.onrender.com`. If you change the backend address, update `chatbot/.env.local` and restart Vite. Open the URL printed by Vite, usually `https://ai-powered-website-with-q-a-insurebot-1-2.onrender.com/`.
 
 ## Deploy to Render
 
@@ -142,8 +142,8 @@ git status
 | -------- | -------------- | ---------------------------------------------------------------------------------------------------- |
 | Backend  | `GROQ_API_KEY` | Your private Groq API key                                                                            |
 | Backend  | `GROQ_MODEL`   | A model ID enabled for your Groq account                                                             |
-| Backend  | `FRONTEND_URL` | The deployed frontend URL, such as `https://devansh-frontend.onrender.com`, without a trailing slash |
-| Frontend | `VITE_API_URL` | The deployed backend URL, such as `https://devansh-backend.onrender.com`, without a trailing slash   |
+| Backend  | `FRONTEND_URL` | The deployed frontend URL, such as `https://ai-powered-website-with-q-a-insurebott.onrender.com/`, without a trailing slash |
+| Frontend | `VITE_API_URL` | The deployed backend URL, such as `https://ai-powered-website-with-q-a-insurebot-1-2.onrender.com/`, without a trailing slash   |
 
 The backend's `FRONTEND_URL` and frontend's `VITE_API_URL` must use the actual URLs Render assigns. If one service URL is not known yet, deploy both, set the correct values in each service's **Environment** page, then redeploy. `VITE_API_URL` is embedded in the frontend during its build, so changing it requires a frontend redeploy.
 
