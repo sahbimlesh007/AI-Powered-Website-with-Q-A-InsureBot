@@ -136,12 +136,12 @@ git status
 3. Review the two services and choose **Apply**.
 4. When prompted, enter the environment values below. Render stores these values in the service environment; do not put secrets in `render.yaml` or Git.
 
-| Service | Variable | Value |
-| --- | --- | --- |
-| Backend | `GROQ_API_KEY` | Your private Groq API key |
-| Backend | `GROQ_MODEL` | A model ID enabled for your Groq account |
-| Backend | `FRONTEND_URL` | The deployed frontend URL, such as `https://devansh-frontend.onrender.com`, without a trailing slash |
-| Frontend | `VITE_API_URL` | The deployed backend URL, such as `https://devansh-backend.onrender.com`, without a trailing slash |
+| Service  | Variable       | Value                                                                                                |
+| -------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| Backend  | `GROQ_API_KEY` | Your private Groq API key                                                                            |
+| Backend  | `GROQ_MODEL`   | A model ID enabled for your Groq account                                                             |
+| Backend  | `FRONTEND_URL` | The deployed frontend URL, such as `https://devansh-frontend.onrender.com`, without a trailing slash |
+| Frontend | `VITE_API_URL` | The deployed backend URL, such as `https://devansh-backend.onrender.com`, without a trailing slash   |
 
 The backend's `FRONTEND_URL` and frontend's `VITE_API_URL` must use the actual URLs Render assigns. If one service URL is not known yet, deploy both, set the correct values in each service's **Environment** page, then redeploy. `VITE_API_URL` is embedded in the frontend during its build, so changing it requires a frontend redeploy.
 
@@ -153,11 +153,11 @@ The backend's `FRONTEND_URL` and frontend's `VITE_API_URL` must use the actual U
 
 ## Environment variables
 
-| Variable | Used by | Purpose |
-| --- | --- | --- |
-| `GROQ_API_KEY` | Backend | Authenticates requests to Groq. Keep this secret. |
-| `GROQ_MODEL` | Backend | Selects the Groq model for chat completions. |
-| `FRONTEND_URL` | Backend | Adds the deployed frontend origin to the backend CORS allowlist. |
+| Variable       | Used by  | Purpose                                                                                 |
+| -------------- | -------- | --------------------------------------------------------------------------------------- |
+| `GROQ_API_KEY` | Backend  | Authenticates requests to Groq. Keep this secret.                                       |
+| `GROQ_MODEL`   | Backend  | Selects the Groq model for chat completions.                                            |
+| `FRONTEND_URL` | Backend  | Adds the deployed frontend origin to the backend CORS allowlist.                        |
 | `VITE_API_URL` | Frontend | Base URL for the backend API. Vite embeds this value at build time; it is not a secret. |
 
 The backend allows the local Vite development origins in addition to the configured `FRONTEND_URL`.
