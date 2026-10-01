@@ -5,7 +5,8 @@ const API_URL = (
   import.meta.env.VITE_API_URL ||
   "https://ai-powered-website-with-q-a-insurebott.onrender.com"
 ).replace(/\/$/, "");
-const BACKEND_URL = `${API_URL}/chat`;
+
+const BACKEND_URL = `${API_URL}/chat`;  
 
 // Simple keyword fallback if the backend is down
 function localAnswer(q) {
