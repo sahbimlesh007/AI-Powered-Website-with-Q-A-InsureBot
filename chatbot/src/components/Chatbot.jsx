@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { company, products, suggestedQuestions } from "../data/companyData";
 
-const BACKEND_URL = "http://localhost:8000/chat";
+const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
+const BACKEND_URL = `${API_URL}/chat`;
 
 // Simple keyword fallback if the backend is down
 function localAnswer(q) {

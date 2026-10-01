@@ -26,7 +26,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        © {new Date().getFullYear()} {company.name}. All rights reserved. Bimlesh
+        © {new Date().getFullYear()} {company.name}. All rights reserved.
+        Bimlesh
       </div>
     </footer>
   );

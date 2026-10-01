@@ -23,6 +23,9 @@ Registrar: ROC Bangalore
 Status: Active
 Designated Partner: Vasanthraj Dheeraj
 Address: 332-39, 58th Cross, 3rd Block, Rajajinagar, Bangalore North, Karnataka 560010
+Phone: +91 80 4000 0000
+Email: support@devanshinsurance.in
+Working hours: Mon - Sat, 9:30 AM - 6:30 PM
 Team size: 11-50 employees
 Revenue band: Below Rs. 10 Cr (FY ending 31 Mar 2025)
 About: Insurance advisory firm helping individuals, families and businesses
@@ -40,9 +43,21 @@ and suggest contacting the company.
 
 app = FastAPI()
 
+# Allowed frontends: local dev + deployed site (set FRONTEND_URL on Render, no trailing slash)
+FRONTEND_URL = os.getenv("FRONTEND_URL", "").rstrip("/")
+
+origins = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+]
+if FRONTEND_URL:
+    origins.append(FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
