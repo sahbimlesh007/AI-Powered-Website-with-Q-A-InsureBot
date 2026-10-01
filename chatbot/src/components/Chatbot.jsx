@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { company, products, suggestedQuestions } from "../data/companyData";
 
-const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:8000").replace(/\/$/, "");
+const API_URL = (
+  import.meta.env.VITE_API_URL ||
+  "https://ai-powered-website-with-q-a-insurebott.onrender.com"
+).replace(/\/$/, "");
 const BACKEND_URL = `${API_URL}/chat`;
 
 // Simple keyword fallback if the backend is down
